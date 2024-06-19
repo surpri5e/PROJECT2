@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME AISATINO</title>
+    <style>
+        body {
+            background-image: url('aisat02.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            position: relative;
+            background-color: white;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: left;
+            width: 350px;
+        }
+        h1 {
+            margin-bottom: 10px;
+            color: #333;
+            text-align: center;
+        }
+        label, input, button {
+            display: block;
+            width: 50%;
+            margin-bottom: 10px;
+        }
+        button {
+            width: auto;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+        .user-icon {
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            transform: translateY(-40%);
+            width: 120px; 
+            height: 120px;
+            background-image: url('3rd.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="button" onclick="login()">Login</button>
+        </form>
+		<div class="user-icon"></div>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const storedUsername = localStorage.getItem('username');
+            const storedPassword = localStorage.getItem('password');
+
+            if (username === 'ADMIN' && password === 'BC2MC') { 
+	        window.location.href = 'index7.html';
+                alert('Login Successful');
+            } else {
+                alert('Wrong username or password');
+            }
+        }
+    </script>
+</body>
+</html>
